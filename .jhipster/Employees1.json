@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "ssn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "9",
+            "fieldValidateRulesMaxlength": "9"
+        },
+        {
+            "fieldName": "contact_number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "first_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "last_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "specialty",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170505224120",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "employees_1",
+    "pagination": "pager"
+}

@@ -1,0 +1,76 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmployees1Label">Create or edit a Employees 1</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.employees1.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.employees1.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_ssn">Ssn</label>
+            <input type="text" class="form-control" name="ssn" id="field_ssn"
+                    ng-model="vm.employees1.ssn"
+                    required ng-minlength="9" ng-maxlength="9" />
+            <div ng-show="editForm.ssn.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ssn.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.ssn.$error.minlength" translate-value-min="9">
+                    This field is required to be at least 9 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.ssn.$error.maxlength">
+                    This field cannot be longer than 9 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="db2App.employees1.contact_number" for="field_contact_number">Contact Number</label>
+            <input type="text" class="form-control" name="contact_number" id="field_contact_number"
+                    ng-model="vm.employees1.contact_number"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="db2App.employees1.first_name" for="field_first_name">First Name</label>
+            <input type="text" class="form-control" name="first_name" id="field_first_name"
+                    ng-model="vm.employees1.first_name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="db2App.employees1.last_name" for="field_last_name">Last Name</label>
+            <input type="text" class="form-control" name="last_name" id="field_last_name"
+                    ng-model="vm.employees1.last_name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_specialty">Specialty</label>
+            <input type="text" class="form-control" name="specialty" id="field_specialty"
+                    ng-model="vm.employees1.specialty"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.employees1.address"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
